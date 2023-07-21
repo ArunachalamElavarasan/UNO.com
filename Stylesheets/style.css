@@ -1,0 +1,254 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+body{
+    background: url("../Images/backgroundImage") center no-repeat;
+    background-size: cover;
+    height: 100vh;    
+    overflow: hidden;
+}
+.flexDisplay{
+    display: flex;
+}
+.flexBetween{
+    justify-content: space-between;
+}
+.flexAround{
+    justify-content: space-around;
+}
+.flexEvenly{
+    justify-content: space-evenly;
+}
+.flexDirCol{
+    flex-direction: column;
+}
+.flexEnd{
+    justify-content: flex-end;
+}
+.flexCenter{
+    justify-content: center;
+}
+.flexItemCenter{
+    align-items: center;
+}
+.posRelative{
+    position: relative;
+}
+.posAbsolute{
+    position: absolute;
+}
+.bgLight{
+    background-color: #fff;
+}
+.bgGreen{
+    background-color: #3AB900;
+}
+.bgRed{
+    background-color: #FF0000;
+}
+.bgBlue{
+    background-color: #0085C8;
+}
+.bgYellow{
+    background-color: #FFBE00;
+}
+.bgDark{
+    background-color: #191919;
+}
+.bgVilot{
+    background-color: #8500D1;
+}
+.textLight{
+    color: #fff;
+}
+.textGreen{
+    color: #3AB900;
+}
+.textRed{
+    color: #FF0000;
+}
+.textBlue{
+    color: #0085C8;
+}
+.textYellow{
+    color: #FFBE00;
+}
+.textBold{
+    font-size: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 1px black;
+    padding: 5px;
+}
+.disHeight{
+    height: 600px;
+}
+.playingContainer{
+    width: 90%;
+    height: 550px;
+}
+.cardContainer{
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    border: 0.3px solid black;
+    transition: 0.3s;
+    z-index: 3;
+}
+.topMargin{ 
+    margin-top: -50px;
+}
+.card{
+    width: 90px;
+    height: 140px;
+    border-radius: 10px;
+    border: 0.3px solid black;
+}
+.cardValue{
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Archivo Black', sans-serif;
+    text-shadow: 2px 2px 2px black;
+}
+.innerCardContainer{
+    height: 60px;
+    width: 60px;
+}
+.rotateBox{
+    transform: rotate(45deg);
+}
+.cardIcon{
+    transform: rotate(-45deg);
+}
+.bottomIconRotate{
+    transform: rotate(180deg);
+}
+.deckContainer{
+    height: 160px;
+    width: 95%;
+}
+.commonDeckContainer{
+    width: 230px;
+    height: 160px;
+    border: 5px #0085C8 solid;
+    border-radius: 15px;
+}
+.pointer{
+    cursor: pointer;
+}
+.lgFont{
+    font-size: 20px;
+    transform: rotate(-45deg);
+    z-index: 1;
+    right: 22%;
+    font-family: 'Bungee', cursive;
+    text-shadow: 0 0 8px #FFBE00, 0 0 10px #FFBE00;
+}
+.colorContainer{
+    height: 50%;
+    width: 100%;
+}
+.smColorContainer{
+    height: 100%;
+    width: 50%;
+}
+.srOnly{
+    display: none;
+}
+.cardDraw{
+    width: 40px;
+    height: auto;
+    top: 50px;
+    margin: 10px 0px 0px 5px;
+}
+.common{
+    width: 380px;
+}
+.commonBox{
+    height: 140px;
+}
+.boxShadow{
+    box-shadow: 2px 2px black inset;
+}
+.colorIdentifier, .btn{
+    width: 35px;
+    height: 35px;
+    box-shadow: 1px 1px black inset;
+    transform: rotate(45deg);
+    border: none;
+}
+.rotateAntiClockwise{
+    transform: rotate(-45deg);
+    font-size: 12px;
+}
+.disabled{
+    cursor: default;
+    opacity: 0.8;
+}
+.halfRotate{
+    transform: rotate(180deg);
+}
+.introImage{
+    width: 400px;
+    height: auto;
+}
+.displayNone{
+    display: none;
+}
+.startBtn{
+    width: 150px;
+    height: 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+.statusContainer{
+    width: 400px;
+    height: 200px;
+}
+.startBtn:hover{
+    width: 180px;
+    height: 50px;
+    font-size: 26px;
+}
+.popUp{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 8;
+    top: 100vh;
+    transition: 0.5s;
+}
+.popUpContainer{
+    width: 400px;
+    height: 200px;
+    border: 4px solid;
+    border-radius: 10px;
+}
+.popUpShow{
+    top: 0vh;
+}
+.btnContainer{
+    width: 300px;
+}
+.visibleNone{
+    visibility: hidden;
+}
+.rotateAnimation{
+    transform: rotate(1080deg);
+}
+.playerName{
+    left: 25%;
+    font-size: 25px;
+    transition: 0.5s;
+}
+.nonTurn{
+    width: 50%;
+}
+.thinLine{
+    height: 3px;
+    border-radius: 50%;   
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNO</title>
+    <link rel="stylesheet" href="Stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1de50aa74b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="posRelative">
+    <div class="flexDisplay flexCenter flexItemCenter disHeight">
+      <div
+        class="playingContainer flexDisplay flexDirCol flexBetween flexItemCenter"
+      >
+        <section
+          class="deckContainer flexDisplay flexCenter flexItemCenter"
+          id="computerDeck"
+        ></section>
+
+        <section class="flexDisplay flexBetween flexItemCenter common">
+          <section class="flexDisplay flexBetween flexDirCol commonBox">
+            <section id="tellUNO" class="visibleNone" style="transition: 1s;">
+              <section
+                class="colorIdentifierflexDisplay flexCenter flexItemCenter">
+                <p><img src="Images/uno.png" alt="" style="width: 50px; height: auto;"></p>
+              </section>
+            </section>
+            <button
+              class="colorIdentifier flexDisplay flexCenter flexItemCenter flexDirCol posRelative pointer visibleNone" id="tellUNOButton" onclick="tellUNO()"
+            >
+              <section style="height: 50%; width: 100%" class="flexDisplay">
+                <section
+                  class="bgBlue boxShadow"
+                  style="height: 100%; width: 50%"
+                ></section>
+                <section
+                  class="bgRed boxShadow"
+                  style="height: 100%; width: 50%"
+                ></section>
+              </section>
+              <section style="height: 50%; width: 100%" class="flexDisplay">
+                <section
+                  class="bgGreen boxShadow"
+                  style="height: 100%; width: 50%"
+                ></section>
+                <section
+                  class="bgYellow boxShadow"
+                  style="height: 100%; width: 50%"
+                ></section>
+              </section>
+              <section class="posAbsolute">
+                <h3
+                  class="rotateAntiClockwise"
+                  style="
+                    font-size: 30px;
+                    color: black;
+                    text-shadow: 1px 2px 2px white;
+                  "
+                >
+                  1
+                </h3>
+              </section>
+            </section>
+          </button>
+
+          <section
+            class="commonDeckContainer flexDisplay flexBetween flexItemCenter"
+          >
+            <div
+              class="cardContainer bgLight flexDisplay flexCenter flexItemCenter"
+              onclick="play(500)" id="drawnDeck"
+            >
+              <section
+                class="bgDark card textLight flexDisplay flexCenter flexDirCol"
+              >
+                <section
+                  class="flexDisplay flexCenter flexItemCenter rotateBox posRelative"
+                >
+                  <section
+                    class="bgLight innerCardContainer textGreen flexDisplay flexCenter flexItemCenter flexDirCol"
+                  >
+                    <section
+                      style="height: 50%; width: 100%"
+                      class="flexDisplay"
+                    >
+                      <section
+                        class="bgBlue boxShadow"
+                        style="height: 100%; width: 50%"
+                      ></section>
+                      <section
+                        class="bgRed boxShadow"
+                        style="height: 100%; width: 50%"
+                      ></section>
+                    </section>
+                    <section
+                      style="height: 50%; width: 100%"
+                      class="flexDisplay"
+                    >
+                      <section
+                        class="bgGreen boxShadow"
+                        style="height: 100%; width: 50%"
+                      ></section>
+                      <section
+                        class="bgYellow boxShadow"
+                        style="height: 100%; width: 50%"
+                      ></section>
+                    </section>
+                  </section>
+                  <h1 class="textLight lgFont posAbsolute">UNO</h1>
+                </section>
+              </section>
+            </div>
+            <section id="throwDeck"></section>
+          </section>
+          <section class="flexDisplay flexBetween flexDirCol commonBox">
+            <section>
+              <section class="visibleNone" id="colorIdentifier"></section>
+            </section>
+            <section class="flexDisplay flexItemCenter visibleNone" id="passButton">
+              <button
+                class="btn bgVilot textLight pointer"
+                 onclick="passTurn()"
+              >
+                <i class="fa-solid fa-angle-right cardIcon"></i>
+              </button>
+            </section>
+          </section>
+        </section>
+
+        <section
+          class="deckContainer flexDisplay flexCenter flexItemCenter"
+          id="playerDeck"
+        ></section>
+      </div>
+    </div>
+    <section
+      class="popUp posAbsolute flexDisplay flexCenter flexItemCenter popUpShow" id="popUp"
+    >
+    <div class="flexDisplay flexDirCol flexBetween flexItemCenter textLight">
+      <section class="bgDark statusContainer flexDisplay flexItemCenter flexDirCol displayNone" id="wonStatusContainer">
+        <h2 id="matchStatus"></h2>
+        <section style="width: 100%; height: 100px;" class="flexDisplay flexItemCenter flexAround flexDirCol">
+          <section style="width: 90%;" class="flexDisplay flexDirCol flexBetween">
+            <section class="flexDisplay flexBetween">
+              <h2>Player</h2>
+              <h2 id="playerPoints">0 Points</h2>
+            </section>
+            <section class="thinLine bgLight"></section>
+          </section>
+          <section style="width: 90%;" class="flexDisplay flexDirCol flexBetween">
+            <section class="flexDisplay flexBetween">
+              <h2>Computer</h2>
+              <h2 id="computerPoints">0 Points</h2>
+            </section>
+            <section class="thinLine bgLight"></section>
+          </section>
+        </section>
+        </section>
+    </div>
+      <div style="width: 100%; height: 250px;" class="flexDisplay flexDirCol flexBetween flexItemCenter" id="startBtnContainer">
+        <img src="Images/UNO icon.png" alt="" class="introImage">
+        <button class="pointer bgVilot textLight startBtn" onclick="startGame()">Start Game</button>
+      </div>
+      <div
+        class="bgDark popUpContainer flexDisplay flexDirCol flexEvenly flexItemCenter displayNone"
+        id="colorPopUp"
+      >
+        <h2 class="textLight">SELECT A COLOR</h2>
+        <section class="flexDisplay flexAround btnContainer">
+          <section>
+            <button
+              class="btn bgRed pointer"
+              onclick="popUpAnimation(this.value)"
+              value="Red"
+            ></button>
+          </section>
+          <section>
+            <button
+              class="btn bgGreen pointer"
+              onclick="popUpAnimation(this.value)"
+              value="Green"
+            ></button>
+          </section>
+          <section>
+            <button
+              class="btn bgBlue pointer"
+              onclick="popUpAnimation(this.value)"
+              value="Blue"
+            ></button>
+          </section>
+          <section>
+            <button
+              class="btn bgYellow pointer"
+              onclick="popUpAnimation(this.value)"
+              value="Yellow"
+            ></button>
+          </section>
+        </section>
+      </div>
+    </section>
+    <section class="textLight posAbsolute playerName nonTurn" style="top: 61%;">
+      <b>Player</b>      
+      <section class="thinLine bgLight"></section>
+    </section>
+    <section class="textLight posAbsolute playerName nonTurn " style="top: 31%;">
+      <section class="thinLine bgLight"></section>
+      <b>Computer</b>
+    </section>
+    <section class="textLight posAbsolute" style="width: 80px; top: 40%; font-size: 30px; left: 10%;">
+      <ul class="flexDisplay flexBetween"> 
+        <li id="minutes">
+          05
+        </li>
+        <li>
+           : 
+        </li>
+        <li id="seconds">
+          00
+        </li>
+      </ul>
+    </section>
+    <template id="hidedCardTemplate">
+      <div class="cardContainer bgLight flexDisplay flexCenter flexItemCenter">
+        <section
+          class="bgDark card textLight flexDisplay flexCenter flexDirCol"
+        >
+          <section
+            class="flexDisplay flexCenter flexItemCenter rotateBox posRelative"
+          >
+            <section
+              class="bgLight innerCardContainer textGreen flexDisplay flexCenter flexItemCenter flexDirCol"
+            >
+              <section class="flexDisplay colorContainer">
+                <section class="bgBlue smColorContainer boxShadow"></section>
+                <section class="bgRed smColorContainer boxShadow"></section>
+              </section>
+              <section class="flexDisplay colorContainer">
+                <section class="bgGreen smColorContainer boxShadow"></section>
+                <section class="bgYellow smColorContainer boxShadow"></section>
+              </section>
+            </section>
+            <h1 class="textLight lgFont posAbsolute">UNO</h1>
+          </section>
+        </section>
+      </div>
+    </template>
+    <template id="colorBoxTemplate">
+      <section
+        class="flexDisplay flexCenter flexItemCenter flexDirCol posRelative"
+        style="height: 60px; width: 60px; transform: rotate(45deg)"
+      >
+        <section style="height: 50%; width: 100%" class="flexDisplay">
+          <section
+            class="bgBlue boxShadow"
+            style="height: 100%; width: 50%"
+          ></section>
+          <section
+            class="bgRed boxShadow"
+            style="height: 100%; width: 50%"
+          ></section>
+        </section>
+        <section style="height: 50%; width: 100%" class="flexDisplay">
+          <section
+            class="bgGreen boxShadow"
+            style="height: 100%; width: 50%"
+          ></section>
+          <section
+            class="bgYellow boxShadow"
+            style="height: 100%; width: 50%"
+          ></section>
+        </section>
+        <section class="posAbsolute">
+          <h3
+            class="rotateAntiClockwise"
+            style="
+              font-size: 30px;
+              color: black;
+              text-shadow: 1px 2px 2px white;
+            "
+          ></h3>
+        </section>
+      </section>
+    </template>
+    <template id="openCardTemplate">
+      <div
+        class="cardContainer bgLight flexDisplay flexCenter flexItemCenter pointer"
+      >
+        <section
+          class=""
+        id="cardColor">
+          <section class="flexDisplay">
+            <span class="textLight textBold" id="topIcon"></span>
+          </section>
+          <section class="flexDisplay flexCenter rotateBox">
+            <section
+              class=""
+             id="textColor">
+              <section class="cardIcon">
+                <span class="cardValue" id="cardValue"></span>
+              </section>
+            </section>
+          </section>
+          <section class="flexDisplay bottomIconRotate">
+            <span class="textLight textBold" id="bottomIcon"></span>
+          </section>
+        </section>
+      </div>
+    </template>
+    <script src="Script files/uno.js"></script>
+  </body>
+</html>
